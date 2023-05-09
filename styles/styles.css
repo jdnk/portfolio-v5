@@ -1,0 +1,397 @@
+@font-face {
+  font-family: 'Switzer';
+  src: url('../assets/fonts/Switzer-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('../assets/fonts/Switzer-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Neue Machina';
+  src: url('../assets/fonts/NeueMachina-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Clash Display';
+  src: url('../assets/fonts/ClashDisplay-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Katana';
+  src: url('../assets/fonts/Katana-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NYT';
+  src: url('../assets/fonts/Chomsky-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('../assets/fonts/Satoshi-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mono Spec';
+  src: url('../assets/fonts/MonoSpec-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --col-count: 12;
+  --width: calc(100vw - 192px);
+}
+
+body {
+  margin: 0;
+  background-color: #f9f5ef;
+  color: black;
+  font-family: 'Switzer', sans-serif;
+  font-weight: 400;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 96px;
+  border-bottom: 1px solid black;
+}
+
+p, h1, h2, h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  outline: inherit;
+}
+
+header a:hover {
+  color:#555555;
+}
+
+header h2 {
+  font-size: 36px;
+  line-height: 65px;
+}
+
+header p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  max-height: 81px;
+  width: auto;
+  background-size: contain;
+  margin-top: 48px;
+}
+
+.description {
+  text-align: left;
+  margin-top: 48px;
+  display: none;
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  border-bottom: 1px solid black;
+}
+
+.wrapper1::after {
+  border-color: #f9f5ef;
+}
+
+.flex-section {
+  display: flex;
+  flex-direction: column;
+  padding: 96px;
+  border-bottom: 1px solid black;
+  transition: background-color 0.3s;
+}
+
+.side-by-side-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subsection {
+  border-right: 1px solid black;
+}
+
+.side-by-side-section > a:not(:last-child) > .wrapper > .flex-section {
+  border-right: 1px solid;
+}
+
+.subcol {
+  display: inline-block;
+  width: calc(var(--width) / var(--col-count));
+  text-align: left;
+}
+
+.subheading {
+  display: grid;
+  grid-template-columns: repeat(var(--col-count), 1fr);
+  align-items: center;
+}
+
+.subheading h3,
+.subheading p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.subheading h3 {
+  font-weight: bold;
+}
+
+.dynamic-subheading {
+  display: flex;
+  align-items: center;
+}
+
+.dynamic-subheading h3,
+.dynamic-subheading p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.dynamic-subheading h3 {
+  font-weight: bold;
+}
+
+.flex-section h1 {
+  font-size: 81px;
+  line-height: 97px;
+  margin-top: 48px;
+  font-weight: 400;
+}
+
+.flex-section:hover {
+  background-color: #e9e4de;
+}
+
+#section3 {
+  border-bottom: none;
+}
+
+#section1 h1 {
+  font-family: 'Neue Machina';
+}
+
+#section2 h1 {
+  font-family: 'Katana';
+}
+
+#section3 h1 {
+  font-family: 'Katana';
+}
+
+#section1:active {
+  background-color: #00762f;
+  color: #f9f5ef;
+}
+
+#section2:active {
+  background-color: #ffa9dd;
+}
+
+#section3:active {
+  background-color: #0e0c9a;
+  color: #f9f5ef;
+}
+
+#section1-body {
+  background-color: #00762f;
+  color: #f9f5ef;
+}
+
+#section1-header a:hover {
+  color: #cccccc;
+}
+
+#section1-header {
+  border-color: #f9f5ef;
+}
+
+#flex-section1 {
+  border-color: #f9f5ef;
+}
+
+#flex-section1 h1 {
+  font-family: 'Neue Machina';
+}
+
+#flex-section1:hover {
+  color: #f9f5ef;
+  background-color: #005e25;
+}
+
+#flex-section1:active {
+  color: black;
+  background-color: #f9f5ef;
+}
+
+.subsection1 {
+  border-color: #f9f5ef;
+  border-bottom: none;
+}
+
+.subsection1:hover {
+  color: #f9f5ef;
+  background-color: #005e25;
+}
+
+.subsection1:active {
+  color: black;
+  background-color: #f9f5ef;
+}
+
+#section2-body {
+  background-color: #ffa9dd;
+  color: black;
+}
+
+#section2-header a:hover {
+  color: #555555;
+}
+
+#section2-header {
+  border-color: black;
+}
+
+#flex-section2 {
+  border-color: black;
+}
+
+#flex-section2 h1 {
+  font-family: 'Katana';
+}
+
+#flex-section2:hover {
+  color: black;
+  background-color: #ea91c6;
+}
+
+#flex-section2:active {
+  color: #f9f5ef;
+  background-color: black;
+}
+
+.subsection2 {
+  border-color: black;
+  border-bottom: none;
+}
+
+.subsection2:hover {
+  color: black;
+  background-color: #ea91c6;
+}
+
+.subsection2:active {
+  color: #f9f5ef;
+  background-color: black;
+}
+
+#nyt {
+  font-family: 'NYT';
+}
+
+#aeterna {
+  font-family: 'Satoshi';
+}
+
+#moss {
+  font-family: 'Mono Spec';
+}
+
+@media only screen and (max-width: 500px) {
+  :root {
+    --col-count: 2;
+    --width: calc(100vw - 96px);
+  }
+  header {
+    padding: 48px;
+  }
+  header h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .flex-section {
+    padding: 48px;
+  }
+  .flex-section h1 {
+    margin-top: 24px;
+    font-size: 36px;
+    line-height: 65px;
+  }
+}
+
+@media only screen and (min-width: 501px) {
+  :root {
+    --col-count: 4;
+    --width: calc(100vw - 192px);
+  }
+  .flex-section h1 {
+    font-size: 36px;
+    line-height: 65px;
+  }
+} 
+
+@media only screen and (min-width: 769px) {
+  :root {
+    --col-count: 6;
+  }
+  .flex-section h1 {
+    font-size: 81px;
+    line-height: 97px;
+  }
+} 
+
+@media only screen and (min-width: 1280px) {
+  :root {
+    --col-count: 12;
+  }
+}
+
