@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jaden Kim</title>
+  <link rel="stylesheet" href="../../styles/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../../data/firebase-config.js"></script>
+</head>
+<body id="section3-body">
+  <header id="section3-header">
+    <a href="../../index.html"><h2>Jaden Kim</h2><a>
+    <a href="mailto:jaden@jaden--kim.com">Contact me</a>
+  </header>
+  <main>
+    <a href="../../index.html">
+      <div class="flex-section" id="flex-section3">
+        <div class="subheading">
+          <h3>Back</h3>
+          <p>Section 03</p>
+        </div>
+        <h1>Graphics</h1>
+      </div>
+    </a>
+
+    <div class="side-by-side-section" id="graphics-container"></div>
+  </main>
+  <script>
+    var index = 0;
+
+    const graphicsContainer = document.getElementById("graphics-container");
+
+    db.collection("graphics")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const graphicItem = doc.data();
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "wrapper wrapper3";
+          wrapper.id = `${graphicItem.id}`;
+
+          const button = document.createElement("button");
+          button.className = "button";
+          button.id = `${graphicItem.id}-button`;
+
+          wrapper.appendChild(button);
+
+          button.addEventListener("click", () => toggleImage(`${graphicItem.id}-button`, `${graphicItem.id}-image`, `${graphicItem.id}-images`));
+
+          const flexSection = document.createElement("div");
+          flexSection.className = "flex-section subsection subsection3";
+
+          button.appendChild(flexSection);
+
+          const dynamicSubheading = document.createElement("div");
+          dynamicSubheading.className = "dynamic-subheading";
+
+          flexSection.appendChild(dynamicSubheading);
+
+          const subcol = document.createElement("h3");
+          subcol.className = "subcol";
+          subcol.textContent = "Expand";
+          const graphicNumber = document.createElement("p");
+          graphicNumber.textContent = `Graphic 0${index + 1}`;
+
+          dynamicSubheading.appendChild(subcol);
+          dynamicSubheading.appendChild(graphicNumber);
+
+          const mainImage = document.createElement("img");
+          mainImage.className = "graphic";
+          mainImage.setAttribute("src", graphicItem.images[0]);
+          mainImage.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
+          mainImage.id = `${graphicItem.id}-image`;
+
+          const imagesDiv = document.createElement("div");
+          imagesDiv.className = "graphics-div";
+          imagesDiv.id = `${graphicItem.id}-images`;
+
+          graphicItem.images.forEach((imageItem) => {
+            const image = document.createElement("img");
+            image.className = "graphic-large";
+            image.setAttribute("src", imageItem);
+            image.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
+            imagesDiv.appendChild(image);
+          });
+
+          flexSection.appendChild(mainImage);
+          flexSection.appendChild(imagesDiv);
+
+          graphicsContainer.appendChild(wrapper);
+
+          index++;
+        });
+      })
+      .catch((error) => {
+        console.log("Error retrieving data:", error);
+      });
+  </script>
+  <script src="../../scripts/toggleImage.js"></script>
+</body>
+</html>

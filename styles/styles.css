@@ -59,7 +59,12 @@
   --width: calc(100vw - 192px);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  overflow-x: hidden;
   margin: 0;
   background-color: #f9f5ef;
   color: black;
@@ -114,10 +119,28 @@ main {
 }
 
 .image {
-  max-height: 81px;
-  width: auto;
-  background-size: contain;
   margin-top: 48px;
+  object-fit: contain;
+  width: 100%;
+  height: 81px;
+}
+
+.graphic {
+  margin-top: 48px;
+  object-fit: contain;
+  width: auto;
+  height: 162px;
+}
+
+.graphic-large {
+  margin-top: 48px;
+  object-fit: contain;
+  width: calc(100vw - 192px);
+  height: auto;
+}
+
+.graphics-div {
+  display: none;
 }
 
 .description {
@@ -140,6 +163,14 @@ main {
 }
 
 .wrapper1::after {
+  border-color: #f9f5ef;
+}
+
+.wrapper2::after {
+  border-color: black;
+}
+
+.wrapper3::after {
   border-color: #f9f5ef;
 }
 
@@ -212,10 +243,6 @@ main {
   background-color: #e9e4de;
 }
 
-#section3 {
-  border-bottom: none;
-}
-
 #section1 h1 {
   font-family: 'Neue Machina';
 }
@@ -225,7 +252,7 @@ main {
 }
 
 #section3 h1 {
-  font-family: 'Katana';
+  font-family: 'Clash Display';
 }
 
 #section1:active {
@@ -334,6 +361,52 @@ main {
   background-color: black;
 }
 
+#section3-body {
+  background-color: #0e0c9a;
+  color: #f9f5ef;
+}
+
+#section3-header a:hover {
+  color: #cccccc;
+}
+
+#section3-header {
+  border-color: #f9f5ef;
+}
+
+#flex-section3 {
+  border-color: #f9f5ef;
+}
+
+#flex-section3 h1 {
+  font-family: 'Clash Display';
+}
+
+#flex-section3:hover {
+  color: #f9f5ef;
+  background-color: #080669;
+}
+
+#flex-section3:active {
+  color: black;
+  background-color: #f9f5ef;
+}
+
+.subsection3 {
+  border-color: #f9f5ef;
+  border-bottom: none;
+}
+
+.subsection3:hover {
+  color: #f9f5ef;
+  background-color: #080669;
+}
+
+.subsection3:active {
+  color: black;
+  background-color: #f9f5ef;
+}
+
 #nyt {
   font-family: 'NYT';
 }
@@ -342,7 +415,7 @@ main {
   font-family: 'Satoshi';
 }
 
-#moss {
+#isaiah-moss {
   font-family: 'Mono Spec';
 }
 

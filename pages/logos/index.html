@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaden Kim</title>
   <link rel="stylesheet" href="../../styles/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../../data/firebase-config.js"></script>
 </head>
 <body id="section2-body">
   <header id="section2-header">
@@ -21,96 +24,74 @@
         <h1>Logos</h1>
       </div>
     </a>
-    <div class="side-by-side-section">
-      <div class="wrapper wrapper2">
-      <button id="moss-button">
-        <div class="flex-section subsection subsection2">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Explain</h3>
-            <p>Logo 01</p>
-          </div>
-          <svg class="image" id="moss-logo" width="61" height="81" viewBox="0 0 61 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="30.375" cy="10.125" r="10.125" fill="black"/>
-          <circle cx="30.375" cy="50.625" r="10.125" fill="black"/>
-          <path d="M48.6 50.625C48.6 40.5 40.5 40.5 40.5 30.375C40.5 25.3125 44.55 20.25 50.625 20.25C56.7 20.25 60.75 25.3125 60.75 30.375C60.75 40.5 52.65 40.5 52.65 50.625C52.65 60.75 60.75 60.75 60.75 70.875C60.75 75.9375 56.7 81 50.625 81C44.55 81 40.5 75.9375 40.5 70.875C40.5 60.75 48.6 60.75 48.6 50.625Z" fill="black"/>
-          <path d="M8.1 50.625C8.1 40.5 0 40.5 0 30.375C0 25.3125 4.05 20.25 10.125 20.25C16.2 20.25 20.25 25.3125 20.25 30.375C20.25 40.5 12.15 40.5 12.15 50.625C12.15 60.75 20.25 60.75 20.25 70.875C20.25 75.9375 16.2 81 10.125 81C4.05 81 0 75.9375 0 70.875C0 60.75 8.1 60.75 8.1 50.625Z" fill="black"/>
-          </svg>
-          <p class="description" id="moss-description">
-            The logo is constructed via a grid of intersecting circles and lines. The logo is a monogram of the lowercase letter “I” and the capital letter “M” for Isaiah Moss. The logo utilizes a rigid geometry at the core of its construction, but incorporates a natural rhythm by having the dots flow into each other. In this way, it is a metaphor for the style of music Isaiah creates (synthetic v. natural sounds).
-          </p>
-        </div>
-      </button>
-      </div>
-      <div class="wrapper wrapper2">
-      <button id="hapa-button">
-        <div class="flex-section subsection subsection2">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Explain</h3>
-            <p>Logo 02</p>
-          </div>
-          <svg class="image" id="hapa-logo" width="284" height="81" viewBox="0 0 284 81" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M152.705 81V0H185.776C194.062 0 200.351 2.60559 204.642 7.81678C208.193 12.0462 209.969 17.1818 209.969 23.2238C209.969 30.7762 207.824 36.6294 203.532 40.7832C199.241 44.9371 192.842 47.014 184.333 47.014H162.693V81H152.705ZM162.693 8.83637V38.7441H183.557C189.031 38.7441 193.138 37.4224 195.875 34.779C198.686 32.1357 200.092 28.435 200.092 23.6769C200.092 18.8434 198.686 15.1804 195.875 12.6881C193.138 10.1203 189.216 8.83637 184.111 8.83637H162.693Z" fill="black"/>
-          <path d="M76.3524 0H85.8964V81H76.3524V0Z" fill="black"/>
-          <path d="M0 0H9.54405V81H0V0Z" fill="black"/>
-          <path d="M128.845 0H138.389V81H128.845V0Z" fill="black"/>
-          <path d="M52.4923 0H62.0363V81H52.4923V0Z" fill="black"/>
-          <path d="M221.899 0H231.443V81H221.899V0Z" fill="black"/>
-          <path d="M274.391 0H283.935V81H274.391V0Z" fill="black"/>
-          <path d="M76.3524 33.3529H138.389V42.8824H76.3524V33.3529Z" fill="black"/>
-          <path d="M0 33.3529H62.0363V42.8824H0V33.3529Z" fill="black"/>
-          <path d="M221.899 33.3529H283.935V42.8824H221.899V33.3529Z" fill="black"/>
-          <path d="M221.899 0H283.935V9.52941H221.899V0Z" fill="black"/>
-          <path d="M76.3524 0H138.389V9.52941H76.3524V0Z" fill="black"/>
-          </svg>
-          <p class="description" id="hapa-description">
-            HAPA is a philanthropic organization. The logo here represents the core values of the organization by utilizing a rigid font to represent the firm values of philanthropy by which the organization stands. The singular curved P seeks to showcase that at the core of the orgnization, "soft" values, such as kindness, are pivotal for all of the organization's actions.
-          </p>
-        </div>
-      </button>
-      </div>
-      <div class="wrapper wrapper2">
-      <button id="hearhere-button">
-        <div class="flex-section subsection subsection2">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Explain</h3>
-            <p>Logo 03</p>
-          </div>
-          <svg  class="image" id="hearhere-logo" width="58" height="85" viewBox="0 0 58 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 29C2 15.5 8.75 2 29 2C49.25 2 56 15.5 56 29C56 42.5 45.875 42.5 42.5 56C39.125 69.5 32.375 83 18.875 83C5.375 83 2 76.25 2 69.5M42.5 29C42.5 22.25 39.125 15.5 29 15.5C18.875 15.5 15.5 22.25 15.5 29M15.5 29L12.125 25.625M15.5 29L18.875 25.625M32.375 52.625L29 49.25M29 49.25L25.625 52.625M29 49.25C29 56 22.25 69.5 15.5 69.5" stroke="black" stroke-width="3" stroke-linecap="round"/>
-          </svg>
-          <p class="description" id="hearhere-description">
-            The logo was constructed as a metaphor for the core values of hearhere Journal of Thought. The logo is built of an ear as the framework, and two arrows which make up the inner cartilage. These arrows are cyclical, represnting the multiple perspectives that the journal seeks to represent.
-          </p>
-        </div>
-      </button>
-      </div>
-      <div class="wrapper wrapper2">
-      <button id="mh-button">
-        <div class="flex-section subsection subsection2">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Explain</h3>
-            <p>Logo 04</p>
-          </div>
-          <svg class="image" id="mh-logo" width="492" height="82" viewBox="0 0 492 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0.636002 22.8858H12.3468V28.2533H12.5095C12.889 27.4943 13.4312 26.7352 14.136 25.9762C14.8408 25.2172 15.6812 24.5395 16.6571 23.9431C17.633 23.3467 18.7444 22.8587 19.9914 22.4792C21.2384 22.0997 22.5938 21.9099 24.0577 21.9099C26.8227 21.9099 29.2625 22.4792 31.377 23.6178C33.5456 24.7563 35.1721 26.5455 36.2565 28.9852C37.6661 26.437 39.374 24.6208 41.38 23.5364C43.386 22.4521 45.8529 21.9099 48.7806 21.9099C51.4372 21.9099 53.6601 22.3708 55.4493 23.2925C57.2926 24.1599 58.7294 25.3798 59.7595 26.9521C60.8438 28.4702 61.6029 30.2864 62.0366 32.4009C62.5246 34.4611 62.7685 36.684 62.7685 39.0696V62.4099H50.5697V39.3949C50.5697 37.5515 50.1631 35.9792 49.3499 34.678C48.5908 33.3226 47.2083 32.6449 45.2023 32.6449C43.7926 32.6449 42.5999 32.8889 41.624 33.3768C40.7023 33.8105 39.9432 34.434 39.3468 35.2473C38.8047 36.0605 38.3981 37.0093 38.127 38.0937C37.9101 39.178 37.8017 40.3166 37.8017 41.5093V62.4099H25.6029V41.5093C25.6029 40.8045 25.5758 39.937 25.5215 38.9069C25.4673 37.8768 25.2776 36.9009 24.9523 35.9792C24.627 35.0575 24.0848 34.2714 23.3258 33.6208C22.6209 32.9702 21.5637 32.6449 20.1541 32.6449C18.5818 32.6449 17.3077 32.9431 16.3318 33.5395C15.3559 34.0816 14.5968 34.8407 14.0547 35.8166C13.5667 36.7383 13.2414 37.7955 13.0788 38.9882C12.9161 40.181 12.8348 41.428 12.8348 42.7292V62.4099H0.636002V22.8858Z" fill="black"/>
-          <path d="M71.5612 22.8858H83.76V62.4099H71.5612V22.8858ZM70.5853 10.4431C70.5853 8.49126 71.263 6.83765 72.6184 5.48223C74.0281 4.07259 75.7088 3.36777 77.6606 3.36777C79.6124 3.36777 81.266 4.07259 82.6214 5.48223C84.0311 6.83765 84.7359 8.49126 84.7359 10.4431C84.7359 12.3949 84.0311 14.0756 82.6214 15.4852C81.266 16.8407 79.6124 17.5184 77.6606 17.5184C75.7088 17.5184 74.0281 16.8407 72.6184 15.4852C71.263 14.0756 70.5853 12.3949 70.5853 10.4431Z" fill="black"/>
-          <path d="M92.6867 0.928009H104.886V62.4099H92.6867V0.928009Z" fill="black"/>
-          <path d="M113.65 0.928009H125.848V38.5003L139.348 22.8858H154.312L138.616 40.6961L154.719 62.4099H139.348L126.011 42.4039H125.848V62.4099H113.65V0.928009Z" fill="black"/>
-          <path d="M183.391 32.6449H200.551V15.4852H210.798V32.6449H227.957V42.8919H210.798V60.0515H200.551V42.8919H183.391V32.6449Z" fill="black"/>
-          <path d="M273.33 0.928009V28.2533H273.493C273.764 27.4943 274.224 26.7352 274.875 25.9762C275.526 25.2172 276.312 24.5395 277.234 23.9431C278.155 23.3467 279.24 22.8587 280.487 22.4792C281.733 22.0997 283.089 21.9099 284.553 21.9099C287.643 21.9099 290.137 22.3979 292.035 23.3738C293.932 24.2955 295.396 25.5967 296.426 27.2774C297.511 28.9581 298.243 30.937 298.622 33.2142C299.002 35.4913 299.191 37.9581 299.191 40.6148V62.4099H286.993V43.0545C286.993 41.916 286.938 40.7503 286.83 39.5575C286.776 38.3105 286.532 37.172 286.098 36.1419C285.718 35.1117 285.095 34.2714 284.227 33.6208C283.414 32.9702 282.221 32.6449 280.649 32.6449C279.077 32.6449 277.803 32.9431 276.827 33.5395C275.851 34.0816 275.092 34.8407 274.55 35.8166C274.062 36.7383 273.737 37.7955 273.574 38.9882C273.411 40.181 273.33 41.428 273.33 42.7292V62.4099H261.131V0.928009H273.33Z" fill="black"/>
-          <path d="M357.467 22.8858H369.177V28.2533H369.34C369.72 27.4943 370.262 26.7352 370.967 25.9762C371.671 25.2172 372.512 24.5395 373.488 23.9431C374.464 23.3467 375.575 22.8587 376.822 22.4792C378.069 22.0997 379.424 21.9099 380.888 21.9099C383.979 21.9099 386.473 22.3979 388.37 23.3738C390.268 24.2955 391.732 25.5967 392.762 27.2774C393.846 28.9581 394.578 30.937 394.958 33.2142C395.337 35.4913 395.527 37.9581 395.527 40.6148V62.4099H383.328V43.0545C383.328 41.916 383.274 40.7503 383.165 39.5575C383.111 38.3105 382.867 37.172 382.434 36.1419C382.054 35.1117 381.43 34.2714 380.563 33.6208C379.75 32.9702 378.557 32.6449 376.985 32.6449C375.412 32.6449 374.138 32.9431 373.162 33.5395C372.187 34.0816 371.427 34.8407 370.885 35.8166C370.397 36.7383 370.072 37.7955 369.909 38.9882C369.747 40.181 369.665 41.428 369.665 42.7292V62.4099H357.467V22.8858Z" fill="black"/>
-          <path d="M441.575 55.5786C439.623 58.0726 437.156 59.9973 434.174 61.3527C431.192 62.7081 428.102 63.3858 424.903 63.3858C421.867 63.3858 418.993 62.8979 416.283 61.922C413.626 60.9461 411.295 59.5636 409.289 57.7744C407.337 55.931 405.792 53.7352 404.653 51.187C403.515 48.6389 402.945 45.7925 402.945 42.6479C402.945 39.5033 403.515 36.6569 404.653 34.1087C405.792 31.5605 407.337 29.3919 409.289 27.6027C411.295 25.7593 413.626 24.3497 416.283 23.3738C418.993 22.3979 421.867 21.9099 424.903 21.9099C427.722 21.9099 430.271 22.3979 432.548 23.3738C434.879 24.3497 436.831 25.7593 438.403 27.6027C440.03 29.3919 441.277 31.5605 442.144 34.1087C443.012 36.6569 443.445 39.5033 443.445 42.6479V46.4702H415.144C415.632 48.8015 416.689 50.672 418.316 52.0816C419.942 53.437 421.948 54.1148 424.334 54.1148C426.34 54.1148 428.021 53.681 429.376 52.8136C430.786 51.8919 432.006 50.7262 433.036 49.3166L441.575 55.5786ZM431.246 38.175C431.301 36.1148 430.623 34.3527 429.213 32.8889C427.804 31.425 425.987 30.6931 423.765 30.6931C422.409 30.6931 421.216 30.9099 420.186 31.3437C419.156 31.7774 418.262 32.3467 417.502 33.0515C416.798 33.7021 416.228 34.4883 415.795 35.4099C415.415 36.2774 415.198 37.1991 415.144 38.175H431.246Z" fill="black"/>
-          <path d="M473.635 68.8346C472.821 70.9491 472.035 72.8196 471.276 74.4461C470.517 76.0726 469.541 77.428 468.349 78.5123C467.21 79.6509 465.746 80.4913 463.957 81.0334C462.168 81.6298 459.809 81.928 456.882 81.928C453.737 81.928 450.701 81.4401 447.773 80.4642L449.4 70.4611C451.243 71.2744 453.141 71.681 455.093 71.681C456.448 71.681 457.559 71.5184 458.427 71.1931C459.294 70.922 459.999 70.4883 460.541 69.8919C461.138 69.3497 461.626 68.672 462.005 67.8587C462.385 67.0455 462.791 66.0967 463.225 65.0123L464.12 62.7352L446.797 22.8858H459.972L470.138 48.9913H470.3L479.002 22.8858H491.526L473.635 68.8346Z" fill="black"/>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M349.157 31.0658L328.615 19.2059L308.073 31.0658V54.7857L328.615 66.6456L349.157 54.7857V31.0658ZM336.685 38.2665L328.615 33.6072L320.545 38.2665V47.585L328.615 52.2443L336.685 47.585V38.2665Z" fill="black"/>
-          </svg>
-          <p class="description" id="mh-description">
-            The milk + honey logo is a simple construction which utilizes a geometric font, which is juxtaposed by a rigid hexagonal icon. The logo seeks to represent, via the geometric sans, the smooth flavors of the drinks, while the hexagon acts both as a honeycomb and as a metaphor for the more progressive nature by which the shop approaches their drinks.
-          </p>
-        </div>
-      </button>
-      </div>
-    </div>
+
+    <div class="side-by-side-section" id="logos-container"></div>
   </main>
-  <script src="../../scripts/scripts.js"></script>
+  <script>
+    var index = 0;
+
+    const logosContainer = document.getElementById("logos-container");
+
+    db.collection("logos")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const logoItem = doc.data();
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "wrapper wrapper2";
+          wrapper.id = `${logoItem.id}`;
+
+          const button = document.createElement("button");
+          button.className = "button";
+          button.id = `${logoItem.id}-button`;
+
+          wrapper.appendChild(button);
+          
+          button.addEventListener("click", () => toggleDescription(`${logoItem.id}-button`, `${logoItem.id}-logo`, `${logoItem.id}-description`));
+
+          const flexSection = document.createElement("div");
+          flexSection.className = "flex-section subsection subsection2";
+
+          button.appendChild(flexSection);
+
+          const dynamicSubheading = document.createElement("div");
+          dynamicSubheading.className = "dynamic-subheading";
+
+          flexSection.appendChild(dynamicSubheading);
+
+          const subcol = document.createElement("h3");
+          subcol.className = "subcol";
+          subcol.textContent = "Explain";
+          const logoNumber = document.createElement("p");
+          logoNumber.textContent = `Logo 0${index + 1}`;
+
+          dynamicSubheading.appendChild(subcol);
+          dynamicSubheading.appendChild(logoNumber);
+
+          const logo = document.createElement("img");
+          logo.className = "image";
+          logo.setAttribute("src", logoItem.url);
+          logo.setAttribute("alt", `${logoItem.id} Logo`);
+          logo.id = `${logoItem.id}-logo`;
+
+          const description = document.createElement("p");
+          description.textContent = `${logoItem.description}`
+          description.className = "description";
+          description.id = `${logoItem.id}-description`;
+
+          flexSection.appendChild(logo);
+          flexSection.append(description);
+
+          logosContainer.appendChild(wrapper);
+
+          index++;
+        });
+      })
+      .catch((error) => {
+        console.log("Error retrieving data:", error);
+      });
+  </script>
+  <script src="../../scripts/toggleDescription.js"></script>
 </body>
 </html>

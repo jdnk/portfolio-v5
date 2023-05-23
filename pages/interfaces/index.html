@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jaden Kim</title>
   <link rel="stylesheet" href="../../styles/styles.css">
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../../data/firebase-config.js"></script>
 </head>
 <body id="section1-body">
   <header id="section1-header">
-    <a href="../../index.html"><h2>Jaden Kim</h2><a>
+    <a href="../../index.html"><h2>Jaden Kim</h2></a>
     <a href="mailto:jaden@jaden--kim.com">Contact me</a>
   </header>
   <main>
@@ -21,42 +24,59 @@
         <h1>Interfaces</h1>
       </div>
     </a>
-    <div class="side-by-side-section">
-      <div class="wrapper wrapper1">
-      <a href="https://www.behance.net/gallery/150767703/Aeterna">
-        <div class="flex-section subsection subsection1">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Enter</h3>
-            <p>Interface 01</p>
-          </div>
-          <h1 id="aeterna">aeterna</h1>
-        </div>
-      </a>
-      </div>
-      <div class="wrapper wrapper1">
-      <a href="https://www.behance.net/gallery/154741279/The-New-York-Times">
-        <div class="flex-section subsection subsection1">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Enter</h3>
-            <p>Interface 02</p>
-          </div>
-          <h1 id="nyt">NYT</h1>
-        </div>
-      </a>
-      </div>
-      <div class="wrapper wrapper1">
-      <a href="https://www.behance.net/gallery/152241057/Isaiah-Moss">
-        <div class="flex-section subsection subsection1">
-          <div class="dynamic-subheading">
-            <h3 class="subcol">Enter</h3>
-            <p>Interface 03</p>
-          </div>
-          <h1 id="moss">Isaiah Moss</h1>
-        </div>
-      </a>
-      </div>
-    </div>
+    <div class="side-by-side-section" id="interfaces-container"></div>
   </main>
-  <script src="../../scripts/scripts.js"></script>
+  <script>
+    var index = 0;
+
+    const interfacesContainer = document.getElementById("interfaces-container");
+
+    db.collection("interfaces")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const interfaceItem = doc.data();
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "wrapper wrapper1"
+
+          const link = document.createElement("a");
+          link.href = interfaceItem.link;
+
+          wrapper.appendChild(link);
+
+          const flexSection = document.createElement("div");
+          flexSection.className = "flex-section subsection subsection1";
+
+          link.appendChild(flexSection);
+
+          const dynamicSubheading = document.createElement("div");
+          dynamicSubheading.className = "dynamic-subheading";
+
+          flexSection.appendChild(dynamicSubheading);
+
+          const subcol = document.createElement("h3");
+          subcol.className = "subcol";
+          subcol.textContent = "Enter";
+          const interfaceNumber = document.createElement("p");
+          interfaceNumber.textContent = `Interface 0${index + 1}`;
+
+          dynamicSubheading.appendChild(subcol);
+          dynamicSubheading.appendChild(interfaceNumber);
+
+          const name = document.createElement("h1");
+          name.textContent = interfaceItem.name;
+          name.id = interfaceItem.id;
+          flexSection.appendChild(name);
+
+          interfacesContainer.appendChild(wrapper);
+          
+          index++;
+        });
+      })
+      .catch((error) => {
+        console.log("Error retrieving data:", error);
+      });
+  </script>
 </body>
 </html>
