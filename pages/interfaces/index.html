@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../../styles/styles.css">
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="../../data/firebase-config.js"></script>
+  <script src="../../data/firebaseConfig.js"></script>
 </head>
 <body id="section1-body">
   <header id="section1-header">
@@ -28,7 +28,7 @@
   </main>
   
   <script>
-    var index = 0;
+    let index = 0;
 
     const interfacesContainer = document.getElementById("interfaces-container");
 
@@ -76,10 +76,14 @@
         });
 
         interfacesContainer.className += " load";
+
+        window.addEventListener("resize", () => checkFlexItemWidth("#interfaces-container", "#f9f5ef"));
       })
       .catch((error) => {
         console.log("Error retrieving data:", error);
       });
   </script>
+
+  <script src="../../scripts/checkFlexItemWidth.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="../../styles/styles.css">
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="../../data/firebase-config.js"></script>
+  <script src="../../data/firebaseConfig.js"></script>
 </head>
 <body id="section2-body">
   <header id="section2-header">
@@ -29,7 +29,7 @@
   </main>
 
   <script>
-    var index = 0;
+    let index = 0;
 
     const logosContainer = document.getElementById("logos-container");
 
@@ -92,6 +92,8 @@
         });
 
         logosContainer.className += " load";
+
+        window.addEventListener("resize", () => checkFlexItemWidth("#logos-container", "black"));
       })
       .catch((error) => {
         console.log("Error retrieving data:", error);
@@ -99,5 +101,6 @@
   </script>
 
   <script src="../../scripts/toggleDescription.js"></script>
+  <script src="../../scripts/checkFlexItemWidth.js"></script>
 </body>
 </html>
