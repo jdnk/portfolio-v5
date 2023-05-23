@@ -24,9 +24,9 @@
         <h1>Graphics</h1>
       </div>
     </a>
-
     <div class="side-by-side-section" id="graphics-container"></div>
   </main>
+
   <script>
     var index = 0;
 
@@ -75,6 +75,8 @@
           mainImage.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
           mainImage.id = `${graphicItem.id}-image`;
 
+          mainImage.addEventListener("load", () => mainImage.className += " load");
+
           const imagesDiv = document.createElement("div");
           imagesDiv.className = "graphics-div";
           imagesDiv.id = `${graphicItem.id}-images`;
@@ -94,11 +96,14 @@
 
           index++;
         });
+
+        graphicsContainer.className += " load";
       })
       .catch((error) => {
         console.log("Error retrieving data:", error);
       });
   </script>
+
   <script src="../../scripts/toggleImage.js"></script>
 </body>
 </html>

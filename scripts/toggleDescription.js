@@ -15,5 +15,6 @@ const toggleDescription = (button, image, description) => {
     b.style.display = "block";
     subsectionDiv.style.borderRight = "none";
     nestedDiv.textContent = "View";
+    a.classList.remove("load");
   }
 };

@@ -27,6 +27,7 @@
 
     <div class="side-by-side-section" id="logos-container"></div>
   </main>
+
   <script>
     var index = 0;
 
@@ -75,23 +76,28 @@
           logo.setAttribute("alt", `${logoItem.id} Logo`);
           logo.id = `${logoItem.id}-logo`;
 
+          logo.addEventListener("load", () => logo.className += " load");
+
           const description = document.createElement("p");
           description.textContent = `${logoItem.description}`
           description.className = "description";
           description.id = `${logoItem.id}-description`;
 
           flexSection.appendChild(logo);
-          flexSection.append(description);
+          flexSection.appendChild(description);
 
           logosContainer.appendChild(wrapper);
 
           index++;
         });
+
+        logosContainer.className += " load";
       })
       .catch((error) => {
         console.log("Error retrieving data:", error);
       });
   </script>
+
   <script src="../../scripts/toggleDescription.js"></script>
 </body>
 </html>

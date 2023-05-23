@@ -15,5 +15,6 @@ const toggleImage = (button, image, imageDiv) => {
     b.style.display = "block";
     subsectionDiv.style.borderRight = "none";
     nestedDiv.textContent = "Minimize";
+    a.classList.remove("load");
   }
 };

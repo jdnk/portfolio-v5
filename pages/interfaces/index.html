@@ -26,6 +26,7 @@
     </a>
     <div class="side-by-side-section" id="interfaces-container"></div>
   </main>
+  
   <script>
     var index = 0;
 
@@ -73,6 +74,8 @@
           
           index++;
         });
+
+        interfacesContainer.className += " load";
       })
       .catch((error) => {
         console.log("Error retrieving data:", error);
