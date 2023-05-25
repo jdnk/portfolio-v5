@@ -14,6 +14,7 @@
     <a href="../../index.html"><h2>Jaden Kim</h2><a>
     <a href="mailto:jaden@jaden--kim.com">Contact me</a>
   </header>
+  
   <main>
     <a href="../../index.html">
       <div class="flex-section" id="flex-section2">
@@ -70,20 +71,26 @@
           dynamicSubheading.appendChild(subcol);
           dynamicSubheading.appendChild(logoNumber);
 
-          const logo = document.createElement("img");
-          logo.className = "image";
-          logo.setAttribute("src", logoItem.url);
-          logo.setAttribute("alt", `${logoItem.id} Logo`);
-          logo.id = `${logoItem.id}-logo`;
+          const logoObj = new Image();
+          logoObj.src = logoItem.url;
+          logoObj.onload = () => {
+            const logo = document.createElement("img");
+            logo.className = "image";
+            logo.setAttribute("src", logoItem.url);
+            logo.setAttribute("alt", `${logoItem.id} Image ${index + 1}`);
+            logo.id = `${logoItem.id}-logo`;
 
-          logo.addEventListener("load", () => logo.className += " load");
+            logo.addEventListener("load", () => {
+              logo.className += " load";
+              flexSection.appendChild(logo);
+            });
+          }
 
           const description = document.createElement("p");
           description.textContent = `${logoItem.description}`
           description.className = "description";
           description.id = `${logoItem.id}-description`;
 
-          flexSection.appendChild(logo);
           flexSection.appendChild(description);
 
           logosContainer.appendChild(wrapper);

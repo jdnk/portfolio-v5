@@ -69,27 +69,37 @@
           dynamicSubheading.appendChild(subcol);
           dynamicSubheading.appendChild(graphicNumber);
 
-          const mainImage = document.createElement("img");
-          mainImage.className = "graphic";
-          mainImage.setAttribute("src", graphicItem.images[0]);
-          mainImage.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
-          mainImage.id = `${graphicItem.id}-image`;
+          const mainImgObj = new Image();
+          mainImgObj.src = graphicItem.images[0];
+          mainImgObj.onload = () => {
+            const mainImage = document.createElement("img");
+            mainImage.className = "graphic";
+            mainImage.setAttribute("src", graphicItem.images[0]);
+            mainImage.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
+            mainImage.id = `${graphicItem.id}-image`;
 
-          mainImage.addEventListener("load", () => mainImage.className += " load");
+            mainImage.addEventListener("load", () => {
+              mainImage.className += " load";
+              flexSection.appendChild(mainImage);
+            });
+          }
 
           const imagesDiv = document.createElement("div");
           imagesDiv.className = "graphics-div";
           imagesDiv.id = `${graphicItem.id}-images`;
 
           graphicItem.images.forEach((imageItem) => {
-            const image = document.createElement("img");
-            image.className = "graphic-large";
-            image.setAttribute("src", imageItem);
-            image.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
-            imagesDiv.appendChild(image);
+            const imgObj = new Image();
+            imgObj.src = imageItem;
+            imgObj.onload = () => {
+              const image = document.createElement("img");
+              image.className = "graphic-large";
+              image.setAttribute("alt", `${graphicItem.id} Image ${index + 1}`);
+              image.setAttribute("src", imageItem);
+              image.addEventListener('load', () => imagesDiv.appendChild(image));
+            };
           });
 
-          flexSection.appendChild(mainImage);
           flexSection.appendChild(imagesDiv);
 
           graphicsContainer.appendChild(wrapper);
