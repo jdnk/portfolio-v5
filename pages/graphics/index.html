@@ -48,7 +48,7 @@
 
           wrapper.appendChild(button);
 
-          button.addEventListener("click", () => toggleImage(`${graphicItem.id}`, `${graphicItem.id}-image`, `${graphicItem.id}-images`, "#f9f5ef"));
+          button.addEventListener("click", () => toggleImage(`${graphicItem.id}`, `${graphicItem.id}-image`, `${graphicItem.id}-images`, "#ffffff"));
 
           const flexSection = document.createElement("div");
           flexSection.className = "flex-section subsection subsection3";
@@ -109,7 +109,7 @@
 
         graphicsContainer.className += " load";
 
-        window.addEventListener("resize", () => checkFlexItemWidth("#graphics-container", "#f9f5ef"));
+        window.addEventListener("resize", () => checkFlexItemWidth("#graphics-container", "black"));
 
       })
       .catch((error) => {

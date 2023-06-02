@@ -66,7 +66,7 @@ html {
 body {
   overflow-x: hidden;
   margin: 0;
-  background-color: #f9f5ef;
+  background-color: #ffffff;
   color: black;
   font-family: 'Switzer', sans-serif;
   font-weight: 400;
@@ -77,7 +77,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 96px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cccccc;
 }
 
 p, h1, h2, h3 {
@@ -100,7 +100,7 @@ button {
 }
 
 header a:hover {
-  color:#555555;
+  color: #cccccc;
 }
 
 header h2 {
@@ -167,7 +167,7 @@ main {
 }
 
 .wrapper1::after {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 .wrapper2::after {
@@ -175,14 +175,14 @@ main {
 }
 
 .wrapper3::after {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 .flex-section {
   display: flex;
   flex-direction: column;
   padding: 96px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #cccccc;
   transition: background-color 0.3s;
 }
 
@@ -253,7 +253,7 @@ main {
 }
 
 .flex-section:hover {
-  background-color: #e9e4de;
+  background-color: #eeeeee;
 }
 
 #section1 h1 {
@@ -269,34 +269,34 @@ main {
 }
 
 #section1:active {
-  background-color: #00762f;
-  color: #f9f5ef;
+  background-color: #16f647;
+  color: black;
 }
 
 #section2:active {
-  background-color: #ffa9dd;
+  background-color: #fd96c7;
 }
 
 #section3:active {
-  background-color: #0e0c9a;
-  color: #f9f5ef;
+  background-color: #d7f616;
+  color: black;
 }
 
 #section1-body {
-  background-color: #00762f;
-  color: #f9f5ef;
+  background-color: #16f647;
+  color: black;
 }
 
 #section1-header a:hover {
-  color: #cccccc;
+  color: #13d33d;
 }
 
 #section1-header {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 #flex-section1 {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 #flex-section1 h1 {
@@ -304,37 +304,37 @@ main {
 }
 
 #flex-section1:hover {
-  color: #f9f5ef;
-  background-color: #005e25;
+  color: black;
+  background-color: #13d33d;
 }
 
 #flex-section1:active {
-  color: black;
-  background-color: #f9f5ef;
+  color: #16f647;
+  background-color: black;
 }
 
 .subsection1 {
-  border-color: #f9f5ef;
+  border-color: black;
   border-bottom: none;
 }
 
 .subsection1:hover {
-  color: #f9f5ef;
-  background-color: #005e25;
+  color: black;
+  background-color: #13d33d;
 }
 
 .subsection1:active {
-  color: black;
-  background-color: #f9f5ef;
+  color: #16f647;
+  background-color: black;
 }
 
 #section2-body {
-  background-color: #ffa9dd;
+  background-color: #fd96c7;
   color: black;
 }
 
 #section2-header a:hover {
-  color: #555555;
+  color: #e183b0;
 }
 
 #section2-header {
@@ -351,11 +351,11 @@ main {
 
 #flex-section2:hover {
   color: black;
-  background-color: #ea91c6;
+  background-color: #e183b0;
 }
 
 #flex-section2:active {
-  color: #f9f5ef;
+  color: #fd96c7;
   background-color: black;
 }
 
@@ -366,29 +366,29 @@ main {
 
 .subsection2:hover {
   color: black;
-  background-color: #ea91c6;
+  background-color: #e183b0;
 }
 
 .subsection2:active {
-  color: #f9f5ef;
+  color: #fd96c7;
   background-color: black;
 }
 
 #section3-body {
-  background-color: #0e0c9a;
-  color: #f9f5ef;
+  background-color: #d7f616;
+  color: black;
 }
 
 #section3-header a:hover {
-  color: #cccccc;
+  color: #c8e513;
 }
 
 #section3-header {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 #flex-section3 {
-  border-color: #f9f5ef;
+  border-color: black;
 }
 
 #flex-section3 h1 {
@@ -396,28 +396,28 @@ main {
 }
 
 #flex-section3:hover {
-  color: #f9f5ef;
-  background-color: #080669;
+  color: black;
+  background-color: #c8e513;
 }
 
 #flex-section3:active {
-  color: black;
-  background-color: #f9f5ef;
+  color: #d7f616;
+  background-color: black;
 }
 
 .subsection3 {
-  border-color: #f9f5ef;
+  border-color: black;
   border-bottom: none;
 }
 
 .subsection3:hover {
-  color: #f9f5ef;
-  background-color: #080669;
+  color: black;
+  background-color: #c8e513;
 }
 
 .subsection3:active {
-  color: black;
-  background-color: #f9f5ef;
+  color: #d7f616;
+  background-color: black;
 }
 
 #nyt {
